@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html>
+<font color = "gold">
 <head>
   <title>Hotel</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 
 
-<div id = "banner">
-	<%=image_tag("5page-img1.png", :size=>"90x80")%>
-	<%="Hotel"%>	
+<div id = "templatemo_header">
+	<br>
+	<br><h1>Hotel</h1>	
 </div>
 
+<body style="background-color: #004800;">
 
-<div id="nav">
-	<ul>
+<div id="templatemo_menu">
+	<ul>		
 		<li><%=link_to"Home","#"%></li>
 		<li><%=link_to"Rooms", rooms_path%></li>
 		<li><%=link_to"Make a Booking", new_booking_path%></li>
+		
+		<%if !logged_in? %>
+			<li><%=link_to"Sign In", login_path%></li>
+		<%else%>
+			<li>Signed in as <%=@current_user.name%></li>
+			<li><%=link_to"Sign out",logout_path%></li>
+		<%end%>
+		<li><%=link_to"Register", new_user_path%></li>
+		
 	</ul>
 </div>
 
+<%flash.each do |key,value|%>
+	<div class = "flash<%=key%>">
+		<%=value%>
+	</div>
+<%end%>
+
 <%= yield %>
 
-
+</body>
+</font>
 </html>

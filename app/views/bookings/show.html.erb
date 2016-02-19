@@ -16,6 +16,10 @@
 </p>
 
 <p>
+  <strong>Number of Nights:</strong>
+  <%= (@booking.endDate - @booking.startDate).to_i %>
+</p>
+<p>
   <strong>Numberofguests:</strong>
   <%= @booking.numberOfGuests %>
 </p>

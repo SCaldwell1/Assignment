@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160208143514) do
+ActiveRecord::Schema.define(version: 20160218095345) do
 
   create_table "bookings", force: true do |t|
     t.integer  "roomType"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160208143514) do
     t.integer  "guest_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "numberOfNights"
   end
 
   create_table "guests", force: true do |t|
@@ -42,11 +43,19 @@ ActiveRecord::Schema.define(version: 20160208143514) do
   end
 
   create_table "rooms", force: true do |t|
-    t.string   "type"
+    t.string   "roomType"
     t.string   "image"
     t.boolean  "availability"
     t.integer  "price"
     t.integer  "hotel_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
