@@ -1,10 +1,39 @@
 <html>
-<body style="background-color: #004800;">
-<font color="gold"><h2>Welcome</h2>
-<p>To make a booking click <%=link_to"here", new_booking_path%></p>
-</font>
+<body>
+
+<h2>Welcome</h2>
+<p>Would you like to make a <%=link_to"booking", new_booking_path%></p>
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+  </ol>
+
+  
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%=image_tag("room1.jpg", :size=>"410x500")%>
+    </div>
+
+    <div class="item">
+      <%=image_tag("room2.jpg", :size=>"500x500")%>
+    </div> 
+	
+	<div class="item">
+      <%=image_tag("Family-room.jpg", :size=>"500x500")%>
+    </div>
+	
+	<div class="item">
+      <%=image_tag("hotel.jpg", :size=>"500x500")%>
+    </div>
+	
+	<div class="item">
+      <%=image_tag("oconnellstreet.jpg", :size=>"500x500")%>
+    </div>
+ </div>
+</div>
 
 </body>
 </html>
-
-  

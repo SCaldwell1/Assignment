@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
 
   def destroy
 	if logged_in?
-		session[:uer_id]=nil
+		session[:user_id]=nil
 	else
 		flash[:notice]="You need to log in first"
 	end

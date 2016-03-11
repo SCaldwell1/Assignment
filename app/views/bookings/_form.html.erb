@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :roomType %><br>
+    <%= f.label :room %><br>
     <%= f.collection_select :roomType, Room.all, :id, :roomType %>
   </div>
   <div class="field">
@@ -27,14 +27,8 @@
     <%= f.label :numberOfGuests %><br>
     <%= f.number_field :numberOfGuests %>
   </div>
-  <div class="field">
-    <%= f.label :totalPrice %><br>
-    <%= f.text_field :totalPrice %>
-  </div>
-  <div class="field">
-    <%= f.label :guest_id %><br>
-    <%= f.text_field :guest_id %>
-  </div>
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>

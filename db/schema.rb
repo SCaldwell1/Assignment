@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218095345) do
+ActiveRecord::Schema.define(version: 20160303094945) do
 
   create_table "bookings", force: true do |t|
     t.integer  "roomType"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20160218095345) do
     t.integer  "room_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   create_table "rooms", force: true do |t|

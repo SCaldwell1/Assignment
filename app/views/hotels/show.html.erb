@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
-
+<h1>Hotel Details</h1>
 <p>
   <strong>Location:</strong>
   <%= @hotel.location %>
+  <br>
+  <%=image_tag"http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@hotel.latitude}%2C#{@hotel.longitude}"%>
 </p>
 
 <p>
@@ -15,10 +17,7 @@
   <%= @hotel.email %>
 </p>
 
-<p>
-  <strong>Room Types:</strong>
-  <%= @hotel.room_id %>
-</p>
 
-<%= link_to 'Edit', edit_hotel_path(@hotel) %> |
-<%= link_to 'Back', hotels_path %>
+
+<br>
+

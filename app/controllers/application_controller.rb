@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   include ApplicationHelper
+ #before_filter :authorise,:only=>[:new] i get an error in my browser saying the the page is not redirecting properly after i add this line 
   
   def authorise
 	unless logged_in?
